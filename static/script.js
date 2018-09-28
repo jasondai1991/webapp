@@ -5,6 +5,7 @@ var height = +svg.attr("height") - margin.top - margin.bottom;
 var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var parseTime = d3.timeParse('%Y-%m-%d %H:%M:%S');
+var formatTime = d3.timeFormat('%Y-%m-%d %H:%M:%S');
 
 var x = d3.scaleTime()
     .rangeRound([0, width]);
@@ -22,7 +23,9 @@ var area = d3.area()
     .y1(line.y())
     .y0(y(0));
 
-
+var div = d3.select("body").append("div") 
+    .attr("class", "tooltip")       
+    .style("opacity", 0);
 
 d3.json("/stats", function(error, data) {
   if (error) throw error;
@@ -66,8 +69,29 @@ d3.json("/stats", function(error, data) {
   .attr("stroke", "steelblue")
   .attr("stroke-linejoin", "round")
   .attr("stroke-linecap", "round")
-  .attr("stroke-width", 1.5)
+  .attr("stroke-width", 2)
   .attr("d", line);
+
+  g.selectAll("dot")  
+  .data(data)     
+  .enter().append("circle")               
+  .attr("r", 2.5)   
+  .attr("cx", function(d) { return x(d.time); })     
+  .attr("cy", function(d) { return y(d.load); }) 
+  .on("mouseover", function(d) {    
+  div.transition()    
+      .duration(200)    
+      .style("opacity", .7);    
+  div .html(formatTime(d.time) + "<br/><br/> load:</br>" +d.load)  
+      .style("left", (d3.event.pageX) + "px")   
+      .style("top", (d3.event.pageY - 28) + "px");  
+  })          
+  .on("mouseout", function(d) {   
+  div.transition()    
+      .duration(500)    
+      .style("opacity", 0); 
+  })
+  .style("fill", "lightblue")  ;
 });
 
 

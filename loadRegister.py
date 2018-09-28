@@ -16,7 +16,7 @@ class LoadRegister:
         self._avg = 0
 
     # only adding curload signature for testing purpose
-    def add_datapoint(self, curload=None):
+    def register_load(self, curload=None):
         cur_dpnum = len(self._load_stats)
         if cur_dpnum == self._dpoints_num:
             del self._load_stats[0]

@@ -31,7 +31,7 @@ class MyThread(Thread):
     def stop(self):
         self.stop_event.set()
 
-event = lg.add_datapoint
+event = lg.register_load
 thread = MyThread(10, event)
 thread.start()
 
