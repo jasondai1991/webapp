@@ -4,8 +4,10 @@ Version deployed on Heroku for check:
 
 https://load-monitor-jason-heroku.herokuapp.com/
 
+It's multi-CPU architecture and the load is very high.
 
-If you want to run locally, please follow these steps:
+
+To run locally, please follow these steps:
 
 Please make sure you change your system Python version to Python3.
 
@@ -16,7 +18,9 @@ Please make sure you change your system Python version to Python3.
 ls
 ```
 You should be able to see files such as run.py, loadRegister.py etc
+
 4. Assume you have installed Python3  and can use pip.
+
 5. Install all of your requirements by running the command: 
 ```
 pip install --upgrade -r requirements.txt
@@ -24,7 +28,7 @@ pip install --upgrade -r requirements.txt
 
 6. Run
 ```
-export FLASK_APP=run.py
+export FLASK_APP=webserver.py
 ```
 and then
 ```
