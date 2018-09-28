@@ -5,24 +5,21 @@ Please make sure you change your system Python version to Python3.
 Here's instructions how to run it:
 
 1. Unzip the file
-2. Run
-```
-cd Coding
-```
-This will direct you to the Coding directory
+2. Enter the Coding directory (the file you just unzipped)
 3. Run
 ```
 ls
 ```
 You should be able to see files such as run.py, loadRegister.py etc
-4. Assume you have installed Python  and can use pip.
-4. Install all of your requirements by running the command: 
+4. Assume you have installed Python3  and can use pip.
+5. Install all of your requirements by running the command: 
 ```
-pip install -r requirements.txt
+pip install --upgrade -r requirements.txt
 ```
+
 6. Run
 ```
-export FLASK_APP=webserver.py
+export FLASK_APP=run.py
 ```
 and then
 ```
@@ -30,7 +27,7 @@ flask run --host=0.0.0.0
 ```
 7. Application should be running. Type 
 ```
-localhost:5000
+localhost:5000 (or http://0.0.0.0:5000/)
 ```
 in your brower to access the application.
 
