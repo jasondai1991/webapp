@@ -7,12 +7,15 @@ https://load-monitor-jason-heroku.herokuapp.com/
 It's multi-CPU architecture and the load is very high.
 
 
-To run locally, please follow these steps:
+To run locally on Mac, please follow these steps:
 
 Please make sure you change your system Python version to Python3.
 
 1. Unzip the file
-2. Enter the Coding directory (the file you just unzipped)
+2. Enter the Coding directory (the file you just unzipped) by 
+```
+cd Coding
+```
 3. Run
 ```
 ls
@@ -28,7 +31,7 @@ pip install --upgrade -r requirements.txt
 
 6. Run
 ```
-export FLASK_APP=webserver.py
+export FLASK_APP=run.py
 ```
 and then
 ```
@@ -51,10 +54,7 @@ Run Test
 
 
 In Coding directory, run the below command:
-```
-alias python=python3
-```
-then
+
 ```
 python testLoadAlert.py
 ```

@@ -22,7 +22,7 @@ lg = LoadRegister(TIME_INTERVAL, TIME_DISPLAYED, ERROR_INTERVAL)
 # defining a class which runs in the background the gather datapoints
 class MyThread(Thread):
     def __init__(self, interval_seconds, event):
-        super().__init__()
+        super(MyThread, self).__init__()
         self.stop_event = Event()
         self.interval_seconds = interval_seconds
         self.callback = event
