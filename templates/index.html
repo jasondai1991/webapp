@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Load Monitor</title>
+		<meta charset="utf-8" http-equiv="refresh" content="10" />	
+	</head>
+	<body>
+		<div style="background-color: black; text-align: center; padding-top:10px; padding-bottom: 10px; color:white">
+			max:{{ metrics.max}} &nbsp&nbsp&nbsp&nbsp  min:{{metrics.min}}  &nbsp&nbsp&nbsp&nbsp avg:{{metrics.avg}}
+		</div>
+		<div style="text-align:center">
+			<svg width="960" height="500" ></svg>
+		</div>
+		<div style="background-color: lightgrey; min-height:150px">
+			<span style="font-weight:bold; size: 20px; padding-left: 30px"> Messages </span>
+	        <table style="padding-left:30px">
+	          <thead>
+	            <tr>
+	              <th></th>            
+	            </tr>
+	          </thead>
+	          <tbody>
+	          	{% for message in error_messages %}
+	            <tr>
+	              <td>{{ message }}</td>
+	            </tr>
+	            {% endfor %}
+	          </tbody>
+	        </table>
+		</div>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+	    <script src="/static/script.js"></script>
+
+
+	</body>
+</html>
