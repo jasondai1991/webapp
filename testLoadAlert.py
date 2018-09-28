@@ -1,7 +1,7 @@
 import unittest
 from loadRegister import LoadRegister
 
-class TestLoadRegisterAlert(unittest.TestCase):
+class TestLoadAlert(unittest.TestCase):
 
 	#create a load register, and insert 11 datapoints
 	def setUp(self):

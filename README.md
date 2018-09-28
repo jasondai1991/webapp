@@ -1,8 +1,13 @@
 This application is written in Flask for backend, JS (D3.js) and plain html for frontend.
 
-Please make sure you change your system Python version to Python3.
+Version deployed on Heroku for check:
 
-Here's instructions how to run it:
+https://load-monitor-jason-heroku.herokuapp.com/
+
+
+If you want to run locally, please follow these steps:
+
+Please make sure you change your system Python version to Python3.
 
 1. Unzip the file
 2. Enter the Coding directory (the file you just unzipped)
@@ -25,6 +30,7 @@ and then
 ```
 flask run --host=0.0.0.0
 ```
+
 7. Application should be running. Type 
 ```
 localhost:5000 (or http://0.0.0.0:5000/)
@@ -46,7 +52,7 @@ alias python=python3
 ```
 then
 ```
-python testLoadRegisterAlert.py
+python testLoadAlert.py
 ```
 
 You should see all 5 tests pass.

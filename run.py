@@ -3,7 +3,10 @@ import os, json, datetime
 from threading import Thread, Event
 from datetime import datetime
 import requests
-from .loadRegister import LoadRegister
+try:
+    from loadRegister import LoadRegister                 
+except ImportError:
+    from .loadRegister import LoadRegister
 
 # Create application, and point static path (where static resources like images, css, and js files are stored) to the
 # "static folder"
